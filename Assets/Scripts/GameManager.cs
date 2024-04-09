@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     // Output which player turn it is
     public delegate void UpdateMessage(Player player);
-    public event UpdateMessage message;
+    public event UpdateMessage Message;
 
     // Loads the game when the application is opened 
     public void RestartGame()
@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour
 
         // How far each grid space is relative to each other
         // CHANGE THIS IF WE UPDATE THE GAME BOARD!!!
-        float diff = 0.8f;
+        float diff = 0.9f;
 
         // Set the starting position to the beginning of the array
         position[0] = startingPosition;
@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
 
         /* Nested for loop that moves the piece either left to right
          or right to left depending on the board. Repeats 5 times */
-         for (int i = 0; i < 5; i++)
+         for (int i = 0; i < 10; i++)
          {
             // Piece movement, left to right 
             for (int j = 0; j < 9; j++)
@@ -186,8 +186,8 @@ public class GameManager : MonoBehaviour
                 index++;
             }
 
-            position[index] = new UnityEngine.Vector3(position[index - 1].x + diff, position[index - 1].y, position[index - 1].z);
-                index++;
+            position[index] = new UnityEngine.Vector3(position[index - 1].x, position[index - 1].y + diff, position[index - 1].z);
+            index++;
 
             // Piece movement, right to left
             for (int j = 0; j < 9; j++)
@@ -283,7 +283,7 @@ public class GameManager : MonoBehaviour
             currentPlayer = (currentPlayer + 1) % players.Count;
 
             // Output the next player colour's turn
-            message(players[currentPlayer]);
+            Message(players[currentPlayer]);
 
             return;
         }
@@ -304,7 +304,7 @@ public class GameManager : MonoBehaviour
                 hasGameFinished = true;
 
                 // Output the next player colour's turn
-                message(players[currentPlayer]);
+                Message(players[currentPlayer]);
 
                 return;
             }

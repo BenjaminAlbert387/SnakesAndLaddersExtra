@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 572010232}
   - component: {fileID: 572010234}
   - component: {fileID: 572010233}
+  - component: {fileID: 572010235}
   m_Layer: 5
   m_Name: PlayerTurnText
   m_TagString: Untagged
@@ -345,7 +346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -573.61, y: -25}
+  m_AnchoredPosition: {x: -556, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &572010233
@@ -445,6 +446,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572010231}
   m_CullTransparentMesh: 1
+--- !u!114 &572010235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572010231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d2ee0c1bd5bb84dbee51b268e40465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &863795362
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 539, y: 359}
+  m_AnchoredPosition: {x: 539, y: 342}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1731515873
@@ -533,14 +546,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Build V0.66
+  m_text: 'Build V0.7
 
 
-    Counter movement displays but leads to an infinite game
-    state
-
-
-    Will be fixed soon :)'
+    Game technically works but there are lots of glitches
+    with counters'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

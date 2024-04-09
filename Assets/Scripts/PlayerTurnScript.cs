@@ -14,7 +14,7 @@ public class PlayerTurnScript : MonoBehaviour
         PlayerText.text = "Game Start";
 
         // During the game, use the UpdateMessage function
-        GameManager.instance.message += UpdateMessage;
+        GameManager.instance.Message += UpdateMessage;
     }
 
     void UpdateMessage(Player player)
@@ -22,7 +22,7 @@ public class PlayerTurnScript : MonoBehaviour
         // If the game ends, output game over message
         PlayerText.text = GameManager.instance.hasGameFinished ? "Game Over!" 
         
-        // Else output which player's turn it is
+        // Else, output player turn message
         :player.ToString() + "'s Turn";
     }
 }
