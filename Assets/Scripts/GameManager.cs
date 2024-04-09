@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 // Reference: [insert youtube link]
@@ -51,6 +52,10 @@ public class GameManager : MonoBehaviour
     /* Creates another dictonary. Used to connect each player
     with their respective piece*/
     Dictionary<Player, GameObject> pieces;
+
+    // Output which player turn it is
+    public delegate void UpdateMessage(Player player);
+    public event UpdateMessage message;
 
     // Loads the game when the application is opened 
     public void RestartGame()
@@ -276,6 +281,10 @@ public class GameManager : MonoBehaviour
         {
             canClick = true;
             currentPlayer = (currentPlayer + 1) % players.Count;
+
+            // Output the next player colour's turn
+            message(players[currentPlayer]);
+
             return;
         }
 
@@ -293,6 +302,10 @@ public class GameManager : MonoBehaviour
             if (players.Count == 1) 
             {
                 hasGameFinished = true;
+
+                // Output the next player colour's turn
+                message(players[currentPlayer]);
+
                 return;
             }
         }
