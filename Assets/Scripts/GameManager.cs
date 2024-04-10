@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
 
         // How far each grid space is relative to each other
         // CHANGE THIS IF WE UPDATE THE GAME BOARD!!!
-        float diff = 0.9f;
+        float diff = 0.45f;
 
         // Set the starting position to the beginning of the array
         position[0] = startingPosition;
@@ -176,10 +176,10 @@ public class GameManager : MonoBehaviour
 
         /* Nested for loop that moves the piece either left to right
          or right to left depending on the board. Repeats 5 times */
-         for (int i = 0; i < 10; i++)
-         {
+        for (int i = 0; i < 5; i++)
+        {
             // Piece movement, left to right 
-            for (int j = 0; j < 9; j++)
+            for(int j = 0; j < 9; j++)
             {
                 position[index] = new UnityEngine.Vector3(position[index - 1].x + diff, position[index - 1].y, position[index - 1].z);
                 index++;
@@ -196,10 +196,10 @@ public class GameManager : MonoBehaviour
             }
 
             // If a piece reaches the end, prevent it from moving
-            if (index == 100) 
-            return;
-            position[index] = new UnityEngine.Vector3(position[index - 1].x, position[index - 1].y, position[index - 1].z);
-                index++;
+            if (index == 100) return;
+
+            position[index] = new UnityEngine.Vector3(position[index - 1].x, position[index - 1].y + diff, position[index - 1].z);
+            index++;
          }
     }
 
@@ -307,6 +307,12 @@ public class GameManager : MonoBehaviour
 
                 return;
             }
+
+            // Players keep playing their turn until they don't roll a 6
+            currentPlayer = DiceRoll == 6 ? currentPlayer : (currentPlayer + 1) % players.Count;
+
+            // Output player turn message
+            Message(players[currentPlayer]);
         }
     }
 }

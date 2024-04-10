@@ -4,8 +4,8 @@ using UnityEngine;
 
 // Refreence: 
 
-// The list of player colours available. P1 is Red, P2 is Blue.
-public enum Player { RED,BLUE }
+// The list of player colours available.
+public enum Player { RED,BLUE,YELLOW,GREEN }
 
 // Creates a public class called BoardScript
 public class BoardScript : MonoBehaviour
@@ -24,7 +24,7 @@ public class BoardScript : MonoBehaviour
     gridSquares = new int[100];
 
     // As our game is 2 player, two player positions will be set to 0
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 4; i++)
     {
       playerPosition[(Player)i] = 0;
     }
