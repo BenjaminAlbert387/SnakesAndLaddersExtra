@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HelpScene.unity
     guid: b1dd0e9918a290343b3333ae99cae8fa
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 8b0993a8ed6ac044bbadaab4b437dcdf
+  - enabled: 1
     path: Assets/Scenes/Cam's New Scene.unity
     guid: b918ac47514fe8047b98cf0fa3abf8b1
   m_configObjects: {}
