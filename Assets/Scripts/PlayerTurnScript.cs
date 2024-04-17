@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class PlayerTurnScript : MonoBehaviour
 {
     Text PlayerText;
-    // Start is called before the first frame update.
     void Start()
     {
         // When the game starts, output a start message
         PlayerText = GetComponent<Text>();
+
+        // Text outputed when the same starts
         PlayerText.text = "Game Start";
 
         // During the game, use the UpdateMessage function

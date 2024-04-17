@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cam's New Scene.unity
     guid: b918ac47514fe8047b98cf0fa3abf8b1
+  - enabled: 1
+    path: Assets/Scenes/BuildInfo.unity
+    guid: b822583ee0c73ee4b906dec7120c687c
   m_configObjects: {}

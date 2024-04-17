@@ -211,25 +211,25 @@ public class GameManager : MonoBehaviour
         joints = new Dictionary<int, int> 
         {
             // These represent ladders
-            {17, 36},
-            {30, 68},
-            {61, 84},
-            {72, 91},
+            {17-1, 36-1},
+            {30-1, 68-1},
+            {61-1, 84-1},
+            {72-1, 91-1},
 
             // These represent snakes
-            {34, 6},
-            {42, 20},
-            {77, 45},
-            {95, 68},
+            {34-1, 6-1},
+            {42-1, 20-1},
+            {77-1, 45-1},
+            {95-1, 68-1},
 
             // These represent +2 Boost Spaces
-            {20, 22},
-            {38, 40},
-            {56, 58},
-            {70, 72},
+            {20-1, 22-1},
+            {38-1, 40-1},
+            {56-1, 58-1},
+            {70-1, 72-1},
 
             // This represents Super Snake
-            {69, 1},
+            {69-1, 1-1},
         };
     }
 
@@ -299,15 +299,15 @@ public class GameManager : MonoBehaviour
             currentPlayer %= currentPlayer;
 
             // Allows the game to be reset after it ends
-            if (players.Count == 1) 
-            {
-                hasGameFinished = true;
+            if (players.Count == 1) hasGameFinished = true;
 
-                // Output the next player colour's turn
-                Message(players[currentPlayer]);
+            // Output the next player colour's turn
+            Message(players[currentPlayer]);
 
-                return;
-            }
+            return;
+        }
+
+        {
 
             // Players keep playing their turn until they don't roll a 6
             currentPlayer = DiceRoll == 6 ? currentPlayer : (currentPlayer + 1) % players.Count;
