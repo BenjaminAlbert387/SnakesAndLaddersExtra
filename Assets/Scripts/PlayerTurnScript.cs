@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 // Video watched: https://youtu.be/WvJ4_xAxw0U?feature=shared
 
-public class PlayerTurnScript : MonoBehaviour
+/* public class PlayerTurnScript : MonoBehaviour
 {
     Text PlayerText;
     void Start()
@@ -29,3 +29,5 @@ public class PlayerTurnScript : MonoBehaviour
         :player.ToString() + "'s Turn";
     }
 }
+
+*/

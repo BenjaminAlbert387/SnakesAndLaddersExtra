@@ -7,9 +7,8 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Reference: [insert youtube link]
+// Video watched: https://youtu.be/WvJ4_xAxw0U?feature=shared
 public class GameManager : MonoBehaviour
-
 {
     // Boolean that checks whether the dice is able to be pressed or not
     public bool hasGameFinished, canClick;
@@ -54,26 +53,23 @@ public class GameManager : MonoBehaviour
     Dictionary<Player, GameObject> pieces;
 
     // Output which player turn it is
-    public delegate void UpdateMessage(Player player);
-    public event UpdateMessage Message;
-
-    // Loads the game when the application is opened 
-    public void RestartGame()
-    {
-        // Loads the first scene when the game is restarted.
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-    }
+    // Does not work, so decided to just comment it out
+    
+    // public delegate void UpdateMessage(Player player);
+    // public event UpdateMessage Message; 
 
     // Quits the game when the Quit Game button is pressed
     public void QuitGame()
     {
         #if UNITY_EDITOR
-        // If the application is currently not playing
+        // Close the Unity Editor
             UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+
+        #else
         // Close the application
             Application.Quit();
-        // Else continue playing
+
+        #endif
     }
 
     void Start()
@@ -283,7 +279,8 @@ public class GameManager : MonoBehaviour
             currentPlayer = (currentPlayer + 1) % players.Count;
 
             // Output the next player colour's turn
-            Message(players[currentPlayer]);
+            // Does not work, so decided to just comment it out
+            // Message(players[currentPlayer]);
 
             return;
         }
@@ -302,18 +299,19 @@ public class GameManager : MonoBehaviour
             if (players.Count == 1) hasGameFinished = true;
 
             // Output the next player colour's turn
-            Message(players[currentPlayer]);
+            // Does not work, so decided to just comment it out
+            // Message(players[currentPlayer]);
 
             return;
         }
 
         {
-
             // Players keep playing their turn until they don't roll a 6
             currentPlayer = DiceRoll == 6 ? currentPlayer : (currentPlayer + 1) % players.Count;
 
             // Output player turn message
-            Message(players[currentPlayer]);
+            // Does not work, so decided to just comment it out
+            // Message(players[currentPlayer]);
         }
     }
 }
