@@ -163,7 +163,7 @@ public class GameManager : MonoBehaviour
 
         // How far each grid space is relative to each other
         // CHANGE THIS IF WE UPDATE THE GAME BOARD!!!
-        float diff = 0.45f;
+        float diff = 0.657f;
 
         // Set the starting position to the beginning of the array
         position[0] = startingPosition;
@@ -219,7 +219,7 @@ public class GameManager : MonoBehaviour
             {95-1, 68-1},
 
             // These represent +2 Boost Spaces
-            {20-1, 22-1},
+            {21-1, 23-1},
             {38-1, 40-1},
             {56-1, 58-1},
             {70-1, 72-1},
@@ -277,11 +277,6 @@ public class GameManager : MonoBehaviour
         {
             canClick = true;
             currentPlayer = (currentPlayer + 1) % players.Count;
-
-            // Output the next player colour's turn
-            // Does not work, so decided to just comment it out
-            // Message(players[currentPlayer]);
-
             return;
         }
 
@@ -297,21 +292,12 @@ public class GameManager : MonoBehaviour
 
             // Allows the game to be reset after it ends
             if (players.Count == 1) hasGameFinished = true;
-
-            // Output the next player colour's turn
-            // Does not work, so decided to just comment it out
-            // Message(players[currentPlayer]);
-
             return;
         }
 
         {
             // Players keep playing their turn until they don't roll a 6
             currentPlayer = DiceRoll == 6 ? currentPlayer : (currentPlayer + 1) % players.Count;
-
-            // Output player turn message
-            // Does not work, so decided to just comment it out
-            // Message(players[currentPlayer]);
         }
     }
 }
