@@ -52,12 +52,6 @@ public class GameManager : MonoBehaviour
     with their respective piece*/
     Dictionary<Player, GameObject> pieces;
 
-    // Output which player turn it is
-    // Does not work, so decided to just comment it out
-    
-    // public delegate void UpdateMessage(Player player);
-    // public event UpdateMessage Message; 
-
     // Quits the game when the Quit Game button is pressed
     public void QuitGame()
     {
