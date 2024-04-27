@@ -207,10 +207,10 @@ public class GameManager : MonoBehaviour
             {72-1, 91-1},
 
             // These represent snakes
-            {34-1, 6-1},
-            {42-1, 20-1},
+            {47-1, 6-1},
+            {44-1, 20-1},
             {77-1, 45-1},
-            {95-1, 68-1},
+            {95-1, 67-1},
 
             // These represent +2 Boost Spaces
             {21-1, 23-1},
