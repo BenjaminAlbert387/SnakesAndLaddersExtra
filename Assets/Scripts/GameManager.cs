@@ -277,6 +277,10 @@ public class GameManager : MonoBehaviour
         pieces[players[currentPlayer]].GetComponent<Piece>().SetMovement(result);
         canClick = true;
 
+        // Output the next player colour's turn
+        // Does not work, so decided to just comment it out
+        //Message(players[currentPlayer]);
+
         // This stops movement ability to players when they reach the end
         if (result[result.Count - 1] == 99)
         {
@@ -287,11 +291,19 @@ public class GameManager : MonoBehaviour
             // Allows the game to be reset after it ends
             if (players.Count == 1) hasGameFinished = true;
             return;
+
+            // Output the next player colour's turn
+            // Does not work, so decided to just comment it out
+            // Message(players[currentPlayer]);
         }
 
         {
             // Players keep playing their turn until they don't roll a 6
             currentPlayer = DiceRoll == 6 ? currentPlayer : (currentPlayer + 1) % players.Count;
+
+            // Output the next player colour's turn
+            // Does not work, so decided to just comment it out
+            // Message(players[currentPlayer]);
         }
     }
 }
